@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>WiFi Live Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <header class="header">
+
+    <div class="header-left">
+        <div class="chat-logo">💬</div>
+
+        <div class="header-info">
+            <h1>WiFi Live Chat</h1>
+
+            <p>
+                <span class="online-dot"></span>
+                <span id="userCount">0</span> Online
+            </p>
+        </div>
+    </div>
+
+    <div class="header-actions">
+
+        <div class="online-count">
+            🟢 <span id="headerUserCount">0</span>
+        </div>
+
+        <button id="leaveBtn" class="leave-btn">
+            Leave
+        </button>
+
+    </div>
+
+</header>
+
+
+    <!-- Login -->
+    <div id="loginScreen" class="login-screen">
+
+        <div class="login-card">
+
+            <div class="logo">
+                💬
+            </div>
+
+            <h2>Join Live Chat</h2>
+
+            <p>
+                Enter your name to start chatting
+            </p>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your name"
+                maxlength="30"
+                autocomplete="off"
+            >
+
+            <button id="joinBtn">
+                Join Chat
+            </button>
+
+            <div class="network-info">
+                📶 Make sure all devices are connected
+                to the same Wi-Fi network.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Chat -->
+    <main id="chatScreen" class="chat-screen hidden">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+                <h3>👥 Online Users</h3>
+            </div>
+
+            <div id="usersList" class="users-list">
+            </div>
+
+        </aside>
+
+
+        <!-- Chat Area -->
+        <section class="chat-area">
+
+            <div id="messages" class="messages">
+
+                <div class="welcome-message">
+                    <div class="welcome-icon">💬</div>
+
+                    <h2>Welcome to Live Chat</h2>
+
+                    <p>
+                        Messages will appear here in real time.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Typing -->
+            <div id="typing" class="typing"></div>
+
+            
+
+
+            <!-- Input -->
+            <form id="messageForm" class="message-form">
+<input
+    type="file"
+    id="fileInput"
+    hidden
+>
+
+<button
+    type="button"
+    id="fileBtn"
+    class="file-btn"
+>
+    📎
+</button>
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Type your message..."
+                    maxlength="500"
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    ➤
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
